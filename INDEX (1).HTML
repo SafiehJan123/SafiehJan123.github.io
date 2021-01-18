@@ -1,0 +1,146 @@
+<html>
+<head>
+    <script>
+        function Add (a,b,c,d,e){
+
+            var buy= document.getElementsByName("buy");
+            var color= document.getElementsByName("color");
+            color = color[0].value;
+            var size= document.getElementsByName("size");
+            var logo= document.getElementsByName("logo");
+            var amount= document.getElementById("amount").value;
+            var pr=Number(0);
+            for(var i = 0 ;i < buy.length; i++){
+                    if(buy[i].checked){
+                       buy= buy[i].value;
+                        break;
+                    }
+            }
+
+            for(var i = 0; i < size.length; i++){
+                if(size[i].checked){
+                    size=size[i].value;
+                    break;
+                }  
+            }
+            
+            for(var i = 0; i < logo.length; i++){
+                if(logo[i].checked){
+                    pr+=Number(logo[i].value);
+                } 
+            }
+
+        console.log(buy);
+        console.log(color);
+        console.log(size);
+        console.log(pr);
+        console.log(amount);
+
+        var calculate = Number(size)*(Number(buy)+Number(color)+Number(pr));
+        var result = Number(amount)*Number(calculate);
+        console.log(result);
+
+        printrResult(result);
+        }
+        function printrResult(result){
+            var resultDiv= document.getElementById("resultDiv");
+            resultDiv.innerText =result;
+        }
+
+        
+    </script>
+    <title>
+    UFC STORE FOR CHAMPIONS
+</title>  
+</head>
+
+<body style="color:rgba(132, 0, 255, 0.973);">
+    <style>
+        body {
+          background-image: url('u.jpg');
+        }
+        </style>
+    <form action="https://formspree.io/f/moqpkgzq" method="post">
+        <input type="text" id="ORDER" name="ORDER" value="29760734" readonly><BR><BR>
+        <label>
+            name:<input type="text" name="name" value="" placeholder="enter your name " maxlength="20">
+        </label><br></br>
+        <label>
+            familyname:<input type="text" name="f" value="" placeholder="enter your Fname " maxlength="20">
+        </label><br><br>
+<br>
+<label>what u would like to buy?<br>
+<input type="radio" id="tshirt" name="buy" value="10" checked>
+<label for=tshirt>ש"ח 10- חולצה</label><br>
+<input type="radio" id="gofia" name="buy" value="10">
+<label for=gofia>גופיה - 10 ש"ח</label><br>
+<input type="radio" id="svdr" name="buy" value="20">
+<label for=svdr>סוודר - 20 ש"ח</label><br>
+<input type="radio" id="cbchon" name="buy" value="30">
+<label for=cbchon>קפוצון - 30 ש"ח</label><br>
+<input type="radio" id="mael" name="buy" value="50">
+<label for=mael>מעיל - 50 ש"ח</label><br>
+</label><br>
+<label for="Icolor">Choose a color:</label>
+
+<select id="color" name="color">
+  <option id="red" style="background-color: red;" name="color" value="0">אדום </option>
+  <option id="green" style="background-color:green" name="color" value="5">ירוק - תוספת 5 ש"ח</option>
+  <option id="blue" style="background-color:blue" name="color" value="-2">כחול - הורדה 2 ש"חולצה</option>
+  <option id="white" style="background-color: white" name="color" value="0" selected> לבן </option >
+</select>
+<br><br>
+<label> choose size<br>
+    <input type="radio" id="small" name="size" value="0.9" >
+    <label for=small>S - 10% הנחה</label><br>
+    <input type="radio" id="medium" name="size" value="1" >
+    <label for=medium>M</label><br>
+    <input type="radio" id="large" name="size" value="1" >
+    <label for=large>L</label><br>
+    <input type="radio" id="xlarge" name="size" value="1.1" >
+    <label for=xlarge>XL - תוספת 10% </label><br>
+</label>
+<br><br>
+<label>choose logo place - 3 ש"ח כל לוגו</label><br>
+<input type="checkbox" id="kdema" name="logo" value="3">
+<label for=kdema>קדימה</label><br>
+<input type="checkbox" id="ahora" name="logo" value="3">
+<label for=ahora>אחורה</label><br>
+<input type="checkbox" id="le" name="logo" value="3">
+<label for=le>שרוול שמאל</label><br>
+<input type="checkbox" id="Ri" name="logo" value="3">
+<label for=ri>שרוול ימין</label><br>
+
+
+<br>
+
+    <label>
+    amount: <input type="text" id="amount" name="amount" value="1" maxlength="20"> 
+    </label>
+    <br>
+<br>
+<label for="Ktovet">כתובת:</label>
+
+<textarea id="Des" name="Ktovet" rows="4" cols="30"> </textarea>
+<br>
+<br>
+
+<input type="submit" value="Submit">		
+<button type="submit">Send</button>
+<input type="reset">
+</form> <br>
+<input type="button" onclick="Add ()" name="calculate" value="calculate" size="4">
+<br>
+
+<div id="resultDiv" >
+    result:	
+
+<br><br>
+<label>
+<input type="text" name="amount" value="1"> 
+</label>
+
+
+  
+</body>
+</html>
